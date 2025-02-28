@@ -1,3 +1,14 @@
-const h2 = document.createElement("h2");
-h2.textContent = "This content added by JavaScript";
-document.querySelector("body").appendChild(h2);
+// JavaScript for form validation
+
+document.querySelector("form").addEventListener("submit", function(e) {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+
+    if (name === "" || email === "" || message === "") {
+        alert("Please fill in all fields.");
+        e.preventDefault(); // Prevent form submission
+    } else {
+        alert("Thank you for your message, " + name + "!");
+    }
+});
